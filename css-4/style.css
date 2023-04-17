@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div, p, aside {
+    margin: 5px;
+    color: aqua;
+}
+
+/* selectores descendientes */
+aside p {
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+p {
+    color:red;
+    font-size: 130%;
+}
+
+#intro {
+    color: white;
+    background-color: violet;
+}
+
+.primero {
+    font-size: 200%;
+}
+
+.fondo {
+    background-color: gray;
+}
+
+.fuente {
+    font-size: xx-large;
+    color: black;
+}
+
+p * strong {
+    color: black;
+}
+
+main {
+    font-size: medium;
+    font-weight: normal;
+}
+
+section main {
+    font-weight: bold;
+}
+
+p + section {
+    color: brown;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento</title>
+    <style>
+        #principal {
+            width: 800px;
+            height: 800px;
+            background-color: silver;
+            margin: auto
+        }
+
+        #est {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            position: static; /* por defecto */
+            left: 150px;
+            top: 150px;
+        }
+
+        #rel {
+            width: 100px;
+            height: 100px;
+            background-color: lime;
+            position: relative;
+            left: -150px;
+            top: -200px;
+        }
+
+        #abs {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 150px;
+            top: 150px;
+        }
+
+        #fix {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            position: fixed;
+            left: 200px;
+            top: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="principal">
+
+        <div id="est">
+            <p>posición estática</p>
+        </div>
+        <div id="rel">
+            <p>posición relativa</p>
+        </div>
+        <div id="abs">
+            <p>posición absoluta</p>
+        </div>
+        <div id="fix">
+            <p>posición fija</p>
+        </div>
+
+    </div>
+</body>
+
+</html>

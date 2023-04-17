@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Sistema de grillas de Bootstrap:
+    El sistema de grillas de Bootstrap permite hasta 12 columnas en la página. Es posible agrupar las columnas para crear columnas más amplias. Este sistema es responsive, por lo tanto, las columnas se reorganizarán automáticamente dependiendo del tamaño de la pantalla. -->
+    <!-- El sistema de cuadrícula Bootstrap tiene seis clases:
+    .col- (dispositivos extra pequeños: ancho inferior a 576 px)
+    .col-sm- (dispositivos pequeños: ancho igual o superior a 576 px)
+    .col-md- (dispositivos medianos: ancho igual o superior a 768 px)
+    .col-lg- (dispositivos grandes: ancho igual o superior a 992 px)
+    .col-xl- (dispositivos xlarge: ancho igual o superior a 1200 px)
+    .col-xxl- (dispositivos xxlarge: igual o superior a 1400 px)
+    Las clases anteriores se pueden combinar para crear diseños más dinámicos y flexibles. -->
+
+    <div class="container-fluid">
+        <p> Este ejemplo demuestra una división del 50% / 50% (col-6 col- 6) en dispositivos extra pequeños y una
+            división del 75% / 25% en dispositivos más grandes. </p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 col-sm-9 bg-success">col-6 col-sm-9</div>
+                <div class="col-6 col-sm-3 bg-warning">col-6 col-sm-3</div>
+            </div>
+        </div>
+        <br>
+        <p> Este ejemplo demuestra una división del 58% / 42% en dispositivos extra pequeños, pequeños y medianos y una
+            división del 66,3% / 33,3% en dispositivos grandes y extragrandes. </p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-7 col-lg-8 bg-success">col-7 col-lg-8</div>
+                <div class="col-5 col-lg-4 bg-warning">col-5 col-lg-4</div>
+            </div>
+        </div>
+        <br>
+        <p> Este ejemplo demuestra una división del 25% / 75% en dispositivos pequeños, una división del 50% / 50% en
+            dispositivos medianos y una división del 33% / 66% en dispositivos grandes y xlarge. En dispositivos muy
+            pequeños, se apilará automáticamente (100%). </p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-6 col-lg-4 bg-success">col-sm-3 col-md-6 col-lg-4</div>
+                <div class="col-sm-9 col-md-6 col-lg-8 bg-warning">col-sm-9 col-md-6 col-lg-8</div>
+            </div>
+        </div>
+        <!-- Ejemplo con un ancho de 100% -->
+        <br>
+        <p> Ejemplo con un ancho de 100% para dispositivos pequeños. </p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4 bg-success">100% para dispositivos pequeños</div>
+                <div class="col-md-6 col-lg-8 bg-warning">Este contenido se adapta al anterior</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,18 @@
+/* comentario */
+/* tipos de selectores */
+/* selector de tipo */
+div {
+    border: 3px solid green;
+    background-color: aquamarine;
+}
+
+/* selector de clase */
+.fondo-amarillo {
+    background-color: yellow;
+    /* border: 2px dotted blueviolet; */
+}
+
+/* selector de id */
+#importante {
+    background-color: rgb(250, 148, 148);
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Template Areas</title>
+</head>
+<style>
+    .contenedor {
+        display: grid;
+        grid-template-areas:
+            'header header header header'
+            'izq    main   main   main'
+            'izq    main   main   main'
+            'publi  main   main   main'
+            'footer footer footer footer'
+        ;
+        gap: 10px;
+    }
+
+    .item1 {
+        grid-area: header;
+    }
+
+    .item2 {
+        grid-area: izq;
+    }
+
+    .item3 {
+        grid-area: main;
+    }
+
+    .item4 {
+        grid-area: footer;
+    }
+
+    #item5 {
+        grid-area: publi;
+        background-color: red;
+    }
+
+    .contenedor>div {
+        text-align: center;
+        background-color: aqua;
+    }
+
+    @media screen and (max-width: 760px) {
+        .contenedor {
+            grid-template-areas:
+                'header header header header'
+                'main    main   main   main'
+                'main    main   main   main'
+                'izq     izq    izq    publi'
+                'footer footer footer footer'
+            ;
+        }
+    }
+</style>
+
+<body>
+    <div class="contenedor">
+        <div class="item1">Encabezado</div>
+        <div class="item2">Izquierda</div>
+        <div class="item3">Main</div>
+        <div class="item4">Footer</div>
+        <div id="item5">Publicidad</div>
+    </div>
+</body>
+
+</html>
