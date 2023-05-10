@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 3</title>
+    <script>
+        function cambiarFondo() {
+            document.querySelector("#ejemplo").style.backgroundColor = "blue";
+            var elem = document.querySelectorAll(".boton")[0];
+            elem.innerHTML = "Gracias!";
+        }
+    </script>
+</head>
+<body>
+    <h1 id="ejemplo">Titulo</h1>
+    <p class="ejemplo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae suscipit, ab eos id sit assumenda pariatur iure quibusdam architecto iste veniam! Incidunt officiis veritatis tempore sunt ipsum atque soluta pariatur.</p>
+    <button class="boton" onclick="cambiarFondo()">Cambiar el fondo</button>
+</body>
+</html>
