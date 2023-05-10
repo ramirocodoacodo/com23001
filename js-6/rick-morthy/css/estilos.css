@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.tarjeta{
+    border: 1px solid rgb(167, 167, 165);
+    margin: 10px;
+}
+.cuerpo{
+    padding: 10px;
+}
