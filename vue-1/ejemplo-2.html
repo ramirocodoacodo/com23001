@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo con Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="ejemplo2">
+        <ul>
+            <li>Nombre: {{nombre}}</li>
+            <li>Apellido: {{apellido}}</li>
+            <li>Presentación: {{detalles()}}</li>
+        </ul>
+    </div>
+    <script>
+        const { createApp } = Vue;
+
+        // Modelo V-VM-M
+        const app = Vue.createApp({
+            data() {
+                return {
+                    nombre: 'Ramiro',
+                    apellido: 'Escalante Leiva',
+                    direccion: 'Buenos Aires'
+                }
+            },
+            methods: {
+                detalles() {
+                    return `Soy ${this.nombre} ${this.apellido} y vivo en ${this.direccion}`;
+                }
+            }
+        }).mount('#ejemplo2')
+    </script>
+</body>
+
+</html>

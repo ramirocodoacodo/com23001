@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <custom-component-2></custom-component-2>
+        <custom-component-2></custom-component-2>
+        <custom-component-2></custom-component-2>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        const CustomComponent2 = {
+            template: `<div v-on:click = "cambiarNombre()" v-on:mouseout = "reestablecerNombre()">
+                <h1>Componente creado por <span id="nombre">{{nombre}}</span></h1>
+            </div>`,
+            data(){
+                return {
+                    nombre: 'Ramiro'
+                }
+            },
+            methods: {
+                cambiarNombre() {
+                    this.nombre = "Ezequiel";
+                },
+                reestablecerNombre() {
+                    this.nombre = "Ramiro";
+                }
+            }
+        }
+
+        const app = Vue.createApp({
+            components: {
+                'custom-component-2': CustomComponent2
+            }
+        }).mount('#app')
+
+    </script>
+</body>
+
+</html>

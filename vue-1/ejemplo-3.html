@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo con Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="ejemplo3">
+        <div v-html="contenidoHTML"></div>
+        <img v-bind:src="imgSrc" v-bind:alt="imgAlt" width="200">
+    </div>
+    <script>
+        const { createApp } = Vue;
+
+        // Modelo V-VM-M
+        const app = Vue.createApp({
+            data() {
+                return {
+                    contenidoHTML: /*html*/ `<div>
+                                        <h2>Imagen de Internet</h2>
+                                    </div>
+                    `,
+                    imgSrc: "img/img.png",
+                    imgAlt: "Nombre de la img"
+                }
+            }
+        }).mount('#ejemplo3')
+    </script>
+</body>
+
+</html>
