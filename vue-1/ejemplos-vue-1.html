@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a Vue.js</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3"></script>
+
+</head>
+<body>
+    <div id="ejemplo1">
+        <h1>{{ mensaje }}</h1>
+    </div>
+    
+    <div id="ejemplo2">
+        <ul>
+            <li>Nombre: {{nombre}}</li>
+            <li>Apellido: {{apellido}}</li>
+            <li>Presentación: {{detalles()}}</li>
+        </ul>
+    </div>
+
+    <div id="ejemplo3">
+        <div v-html="contenidoHTML"></div>
+        <img v-bind:src="imgSrc" v-bind:alt="imgAlt" width="250">
+    </div>
+
+    <div id="ejemplo4">
+        <custom-component-1></custom-component-1>
+    </div>
+
+    <div id="ejemplo5">
+        <custom-component-2></custom-component-2>
+    </div>
+
+    <!-- Sólo si hay tiempo -->
+    <div id="ejemplo6">
+        <component v-bind:is="vista"></component>
+    </div>
+    
+    <div id="ejemplo7">
+        <h2>Ejemplo 7</h2>
+        <label for=""> Nombre:</label> <input type="text" v-model="nombre" /><br><br> 
+        <label for=""> Apellido:</label> <input type="text" v-model="apellido" /><br><br>
+        <h2>Mi nombre es {{nombre}} {{apellido}}</h2>
+        <h2>Usando una propiedad computada: {{getNombreCompleto}}</h2>
+    </div>
+
+    <!-- Sólo si hay tiempo -->
+    <div id="ejemplo8">
+        <h1>Accediendo a Elementos del DOM utilizando $refs</h1>
+        <input type="text" ref="text">
+        <br><br>
+        <button type="button" @click="addText">Guardar</button>
+        <button type="button" @click="deleteText">Borrar</button>
+        <p ref="textField"></p>
+    </div>
+
+    <!-- Sólo si hay tiempo -->
+    <div id="ejemplo9">
+        <h1>{{titulo}}</h1>
+        <!-- Enlace bidireccional -->
+        <input type="text" v-model="nuevaFruta">
+        <!-- <button v-on:click="agregarFruta">Agregar fruta</button> -->
+        <button @click="agregarFruta">Agregar fruta</button>
+        <ul>
+            <li v-for="fruta of frutas">
+                {{fruta.cantidad}} - {{fruta.nombre}}
+                <button @click=fruta.cantidad++>+</button>
+                <span v-if="fruta.cantidad===0"> - Sin Stock</span>
+            </li>
+        </ul>
+        <h4>Total: {{sumarFrutas}}</h4>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
