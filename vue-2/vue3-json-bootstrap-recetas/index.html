@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app" class="container">
+        <h3>Recetas</h3>
+        <p>Filtro
+            <label for="">Calorias menor a :</label>
+            <input v-model="calories" type="text" id="calories">
+             <label>Cuisine:</label>
+            <select v-model="cuisine" name="cuisine" id="" >
+                <option  id="cuisine" v-for="cuisine of cuisines" >{{cuisine}}</option>
+            </select>
+            <label for="">Course:</label>
+            <select v-model="curso" name="curso" id="" >
+                <option  id="curso" v-for="curso of cursos" >{{curso}}</option>
+            </select>  
+            <button class="btn btn-primary" v-on:click="filtro() ">Buscar</button> 
+            <button class="btn btn-primary"@click="orden()">Orden Ascendente</button>
+        </p><br>
+      
+        <div class="container d-flex flex-row flex-wrap justify-content-around ">
+           <div  v-for="elemento of recipes" class="card">
+            <img class="card-img-top" :src="elemento.photoUrl" :alt="elemento.title">
+            <div class="card-body">
+                <h5 class="card-text">{{elemento.title}}</h5>
+                <p class="card-text">Calories: {{elemento.calories}} </p>
+                <p class="card-text">Cuisine: {{elemento.cuisine}}</p>
+                <p class="card-text">Course: {{elemento.course}}</p>
+            </div>
+           </div>
+        </div>    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/api.js"></script>
+</body>
+</html>

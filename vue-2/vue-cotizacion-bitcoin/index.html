@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>   
+    <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+    <div id="app">
+        <h1>Listado de Precio de Bitcoin</h1>
+        <P>Actualizado: {{time}}</P>
+        
+        <section v-if="errored">
+          <p>Lo sentimos, no es posible obtener la información en este momento, por favor intente nuevamente mas tarde</p>
+        </section>
+      
+        <section v-else>
+          <div v-if="loading">Cargando...</div>
+      
+          <div v-else v-for="currency in info"
+            class="currency"
+          >
+            {{ currency.description }}:
+            <span class="lighten">
+              <span v-html="currency.symbol"></span>{{ currency.rate_float | currencydecimal }}
+            </span>
+          </div>
+      
+        </section>
+      </div>
+      <script src="js/api.js"></script>  
+</body>
+</html>

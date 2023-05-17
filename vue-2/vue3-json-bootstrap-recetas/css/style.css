@@ -1,0 +1,14 @@
+
+select,label,button{
+    margin: 10px ;
+}
+.card{
+    width: 300px;
+    margin:10px 0;
+}
+img{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+

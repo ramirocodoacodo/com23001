@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincronia</title>
+</head>
+<body>
+    <h1>Ejemplo Fetch</h1>
+    <script>
+        const getNombre = (idPost) => {
+            fetch(`https://jsonplaceholder.typicode.com/posts/${idPost}`)
+                .then(res => {
+                    return res.json()
+                })
+                .then(post => {
+                    console.log(post.userId);
+                    console.log(post.body);
+                    fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`)
+                        .then(res => {
+                        return res.json()
+                        })
+                        .then(user => {
+                            console.log(user.name);
+                            console.log(user.email);
+                        })
+                    })
+        }
+        getNombre(99);
+    </script>
+</body>
+</html>

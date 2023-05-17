@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{squadName}}</h1>
+        <p>Home Town: {{info.homeTown}} // Secret Base: {{info.secretBase}} // Formed: {{info.formed}}</p>
+        
+        <section v-for="member in members">      
+            <article>
+                <h2>{{member.name}} </h2>
+                <p>Secret Identity: {{member.secretIdentity}} </p>
+                <p>Age:{{member.age}}</p>
+                <p>Superpowers</p>
+                    <ul v-for="power in member.powers">
+                        <li>{{power}}</li>
+                    </ul>
+                
+            </article>
+        
+        </section>
+
+        <!--<p>{{info}}</p>-->
+
+
+    </div>
+    <script src="js/api.js"></script>
+</body>
+
+</html>
